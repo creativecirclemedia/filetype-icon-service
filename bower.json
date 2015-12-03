@@ -1,0 +1,23 @@
+{
+  "name": "filetype-icon-service",
+  "homepage": "https://github.com/creativecirclemedia/filetype-icon-service",
+  "authors": [
+    "Creative Circle <dev@creativecirclemedia.com>"
+  ],
+  "description": "Icons as a serivce",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "testing/_/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Free-file-icons": "https://github.com/teambox/Free-file-icons.git"
+  }
+}
