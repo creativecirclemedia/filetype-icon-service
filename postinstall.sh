@@ -1,0 +1,1 @@
+cp ./custom-icons/* components/Free-file-icons/48px;

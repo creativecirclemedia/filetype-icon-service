@@ -1,3 +1,6 @@
 {
-  "directory" : "components"
+  "directory" : "components",
+  "scripts": {
+    "postinstall": "./postinstall.sh"
+  }
 }
