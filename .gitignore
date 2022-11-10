@@ -1,2 +1,5 @@
 /vendor/
 /components/
+._*
+.DS_Store
+.env
