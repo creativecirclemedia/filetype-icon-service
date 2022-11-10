@@ -1,8 +1,14 @@
 <?php
 
 if( !isset($_SERVER['QUERY_STRING']) ) exit;
-$path = '/srv/icons/48px';
-$file = ( file_exists($path.'/'.$_SERVER['QUERY_STRING'].'.png') ? $path.'/'.$_SERVER['QUERY_STRING'].'.png' : $path.'/_blank.png' );
+$defaultPath = '/srv/icons/48px';
+if( file_exists(__DIR__ . '/../custom-icons/'.$_SERVER['QUERY_STRING'].'.png') ){
+	$file = __DIR__ . '/../custom-icons/'.$_SERVER['QUERY_STRING'].'.png';
+}elseif( file_exists($defaultPath . '/'.$_SERVER['QUERY_STRING'].'.png') ){
+	$file = $defaultPath . '/'.$_SERVER['QUERY_STRING'].'.png';
+}else{
+	$file = $defaultPath . '/_blank.png';
+}
 if( !file_exists($file) ) exit;
 header("Content-type: image/png");
 header("Content-length: ".filesize($file));
