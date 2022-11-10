@@ -1,0 +1,26 @@
+version: "2.3"
+
+services:
+
+    app:
+      image: nginx:latest
+      ports:
+        - "${PORT}:80"
+      volumes:
+        - .:/srv/filetype-icons
+        - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+      links:
+        - php
+      mem_limit: 10M
+      mem_reservation: 6M
+
+    php:
+      volumes:
+            - .:/srv/filetype-icons
+      build:
+        context: .
+        dockerfile: Dockerfile
+      mem_limit: 10M
+      mem_reservation: 6M
+
+
